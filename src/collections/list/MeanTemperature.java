@@ -38,33 +38,33 @@ public class MeanTemperature {
 		System.out.println("Months with above mean temperature:");
 		int counter = 0;
 		while (iterator1.hasNext()) {
-			int counterNoMean = 0;
+			boolean counterNoMean = true;
 			double temp = iterator1.next();
 			if (temp > meanTemp) {
 				if (counter == 0) {
 					System.out.println("January: " + temp);
-					counterNoMean++;
+					counterNoMean = false;
 				} else if (counter == 1) {
 					System.out.println("February: " + temp);
-					counterNoMean++;
+					counterNoMean = false;
 				} else if (counter == 2) {
 					System.out.println("March: " + temp);
-					counterNoMean++;
+					counterNoMean = false;
 				} else if (counter == 3) {
 					System.out.println("April: " + temp);
-					counterNoMean++;
+					counterNoMean = false;
 				} else if (counter == 4) {
 					System.out.println("May: " + temp);
-					counterNoMean++;
+					counterNoMean = false;
 				} else if (counter == 5) {
 					System.out.println("June: " + temp);
-					counterNoMean++;
+					counterNoMean = false;
 				}
 			}
 			
 			counter++;
 			
-			if (counter == 6 && counterNoMean == 0) {
+			if (counter == 6 && counterNoMean == true) {
 				System.out.println("No months with above mean temperature.");
 			}
 		}
