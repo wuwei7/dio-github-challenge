@@ -2,13 +2,15 @@ package oop;
 
 public class Car {
 	
+	private String maker;
 	private String model;
 	private String color;
 	private int tankCapacity;
 	
 	public Car() {}
 	
-	public Car(String model, String color, int tankCapacity) {
+	public Car(String maker, String model, String color, int tankCapacity) {
+		this.maker = maker; 
 		this.model = model;
 		this.color = color;
 		this.tankCapacity = tankCapacity;
@@ -16,6 +18,14 @@ public class Car {
 	
 	public double fillTank(double gasPrice) {
 		return tankCapacity * gasPrice;
+	}
+	
+	public void setMaker(String maker) {
+		this.maker = maker;
+	}
+	
+	public String getMaker() {
+		return maker;
 	}
 	
 	public void setModel(String model) {
